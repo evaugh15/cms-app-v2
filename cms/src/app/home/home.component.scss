@@ -1,0 +1,17 @@
+ mat-card {
+    width: 50%;
+    margin: auto;
+    max-height: 500px;
+ } 
+ 
+ mat-grid-tile {
+     text-align: center;
+ } 
+
+.center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}

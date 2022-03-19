@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@angular/cli": "^13.3.0",
+    "express": "^4.17.3"
+  }
+}
