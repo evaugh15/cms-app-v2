@@ -1,10 +1,22 @@
-.footer-container {
-    height: 24px;
-    margin-top: -36px;
-    position:fixed;
-    bottom: 0%;
+footer {
+  padding: 20px;
+  background: #673ab7;
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  width: 100%;
+  
+}
+
+  h5 {
+    align-content: center;
+    color: white;
+    font-size: medium;
+    margin-left: 40%;
   }
-  .footer-content {
-    margin: 0 auto;
-    text-align: center;
+  a {
+    align-content: center;
+    color: white;
+    font-size: medium;
+    margin-left: 40%;
   }
