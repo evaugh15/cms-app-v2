@@ -5,3 +5,37 @@ div {
 button {
     margin-left: 10%; 
 }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+
+  th{
+    color: #673ab7;
+    background-color: white;
+  }
+
+  td, th {
+    border: 1px solid #5e5e5e;
+    text-align: center;
+    padding: 8px;
+    max-width:100%;
+    white-space:nowrap;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #673ab7;
+  }
+
+  .b1{
+    padding: 1px;
+    margin:5px;
+  }
+
+  #b2{
+    padding: 1px;
+    margin:5px
+  }
