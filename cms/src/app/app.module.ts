@@ -37,6 +37,7 @@ import { AssetsService } from './assets.service';
 import { FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatSelectModule } from '@angular/material/select';
+import { UsersService } from './users.service';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,7 @@ import { MatSelectModule } from '@angular/material/select';
     LayoutModule,
 
   ],
-  providers: [AssetsService],
+  providers: [AssetsService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
