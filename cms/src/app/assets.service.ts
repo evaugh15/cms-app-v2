@@ -18,7 +18,7 @@ export class AssetsService {
     }
 
     //Uses http.post() to post data 
-addCapstone(itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
+addItem(itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
     {
     this.http.post('http://localhost:8000/devices',{ itemName, itemModel, itemDes, itemSerial, itemCost, itemQty })
         .subscribe((responseData) => {
@@ -26,7 +26,7 @@ addCapstone(itemName: string, itemModel: string, itemDes: string, itemSerial: st
         }); 
     }
 
-    updateCapstone(capstoneId: string, itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
+    updateItem(capstoneId: string, itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
     {
         //request path http://localhost:8000/assets/5xbd456xx 
         //asset information will be send as HTTP body parameters 
@@ -38,7 +38,7 @@ addCapstone(itemName: string, itemModel: string, itemDes: string, itemSerial: st
     }
 
     //Uses http.get() to request data based on student id 
-    getCapstone(capstoneId: string) {
+    getItem(capstoneId: string) {
         return this.http.get('http://localhost:8000/devices/'+ capstoneId);
     }
 

@@ -28,6 +28,6 @@
     <td>{{item.itemCost}}</td>
     <td>{{item.itemQty}}</td>
     <td><button id="b1" mat-button color="warn" (click)="onDelete(item._id)">DELETE</button>
-    <br><button mat-raised-button color="primary" id="b1" [routerLink]="['/editAsset', item._id]">UPDATE</button></td>
+    <br><button mat-raised-button color="primary" id="b1" [routerLink]="['/edit-asset', item._id]">UPDATE</button></td>
   </tr>
 </table>

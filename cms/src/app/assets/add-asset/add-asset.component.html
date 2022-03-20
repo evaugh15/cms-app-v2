@@ -1,28 +1,28 @@
-<h3>Asset Form</h3>
+<h3>{{mode}} Assets Here!</h3>
 <hr>
-<form>
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
     <mat-form-field>
-        <input matInput placeholder="Name" id="itemName" name="itemName" required>
+        <input matInput placeholder="Name" id="itemName" [(ngModel)]="itemName" name="itemName" required>
     </mat-form-field> <br>
 
     <mat-form-field>
-        <input matInput placeholder="Model" id="itemModel" name="itemModel" required>
+        <input matInput placeholder="Model" id="itemModel" [(ngModel)]="itemModel" name="itemModel" required>
     </mat-form-field> <br>
 
     <mat-form-field>
-        <input matInput placeholder="Description" id="itemDes" name="itemDes">
+        <input matInput placeholder="Description" id="itemDes" [(ngModel)]="itemDes" name="itemDes">
     </mat-form-field> <br>
 
     <mat-form-field>
-        <input matInput placeholder="Serial #" id="itemSerial" name="itemSerial">
+        <input matInput placeholder="Serial #" id="itemSerial" [(ngModel)]="itemSerial" name="itemSerial">
     </mat-form-field> <br>
 
     <mat-form-field>
-        <input matInput placeholder="Cost (USD)" id="itemCost" name="itemCost">
+        <input matInput placeholder="Cost (USD)" id="itemCost" [(ngModel)]="itemCost" name="itemCost">
     </mat-form-field> <br>
 
     <mat-form-field>
-        <input matInput placeholder="Quantity" id="itemQty" name="itemQty">
+        <input matInput placeholder="Quantity" id="itemQty" [(ngModel)]="itemQty" name="itemQty">
     </mat-form-field> <br>
 
     <p>
