@@ -35,6 +35,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AssetsService } from './assets.service';
 import { FormsModule } from '@angular/forms';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FormsModule } from '@angular/forms';
     ViewAssetComponent,
     AddAssetComponent,
     EditAssetComponent,
-    DeleteAssetComponent
+    DeleteAssetComponent,
+    DialogComponent
 
   ],
   imports: [

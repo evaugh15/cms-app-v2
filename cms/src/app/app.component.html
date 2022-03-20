@@ -9,23 +9,23 @@
       <button mat-icon-button matTooltip="Home" routerLink="/home" class="home-icon" aria-label="icon-button with home icon">
         <mat-icon>home</mat-icon>
       </button>
-      <button mat-icon-button matTooltip="Notifications" class="notifications-icon" aria-label="icon-button with notifications icon">
+      <button mat-icon-button (click)="onOpenDialog()" matTooltip="Notifications" class="notifications-icon" aria-label="icon-button with notifications icon">
         <mat-icon>notifications</mat-icon>
       </button>
-      <button mat-icon-button matTooltip="App Settings" class="settings-icon" aria-label="icon-button with settings icon">
+      <button mat-icon-button (click)="onOpenDialog()" matTooltip="App Settings" class="settings-icon" aria-label="icon-button with settings icon">
         <mat-icon>settings</mat-icon>
       </button>
-      <button mat-icon-button matTooltip="Help" class="help_outline-icon" aria-label="icon-button with help_outline icon">
+      <button mat-icon-button (click)="onOpenDialog()" matTooltip="Help" class="help_outline-icon" aria-label="icon-button with help_outline icon">
         <mat-icon>help_outline</mat-icon>
       </button>
-      <button mat-icon-button matTooltip="User Settings" class="person-icon" aria-label="icon-button with person icon">
+      <button mat-icon-button (click)="onOpenDialog()" matTooltip="User Settings" class="person-icon" aria-label="icon-button with person icon">
         <mat-icon>person</mat-icon>
       </button>
     </mat-toolbar-row>
 
     <mat-toolbar-row>
       <span class="example-spacer"></span>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
+      <button mat-icon-button matToolTip="Menu" [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
       </button>
         <mat-menu #menu="matMenu">
