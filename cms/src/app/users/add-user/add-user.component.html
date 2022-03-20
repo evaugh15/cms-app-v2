@@ -1,1 +1,38 @@
-<p>add-user works!</p>
+<h3>Add Users Here!</h3>
+<hr>
+<form>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Name" id="Name" name="Name" required>
+    </mat-form-field> <br>
+
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Title" id="userTitle" name="userTitle" required>
+    </mat-form-field> <br>
+
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Email" id="userEmail" name="userEmail" required>
+    </mat-form-field> <br>
+
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Phone Number" id="userPhone" name="userPhone">
+    </mat-form-field> <br>
+
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Username" id="userName" name="userName">
+    </mat-form-field> <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Department</mat-label>
+        <mat-select matInput placeholder="Department" id="userDept" name="userDept">
+            <mat-option value="infoSec">Information Security</mat-option>
+            <mat-option value="serviceDesk">Service Desk</mat-option>
+            <mat-option value="network">Network Ops</mat-option>
+        </mat-select>
+        
+    </mat-form-field> <br>
+
+    <p>
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+        <button type="reset" mat-raised-button color="accent">Reset</button>
+    </p>
+</form>

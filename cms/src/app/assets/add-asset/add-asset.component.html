@@ -1,27 +1,27 @@
 <h3>{{mode}} Assets Here!</h3>
 <hr>
 <form (ngSubmit)="onSubmit()" #myForm="ngForm">
-    <mat-form-field>
+    <mat-form-field appearance="fill">
         <input matInput placeholder="Name" id="itemName" [(ngModel)]="itemName" name="itemName" required>
     </mat-form-field> <br>
 
-    <mat-form-field>
+    <mat-form-field appearance="fill">
         <input matInput placeholder="Model" id="itemModel" [(ngModel)]="itemModel" name="itemModel" required>
     </mat-form-field> <br>
 
-    <mat-form-field>
+    <mat-form-field appearance="fill">
         <input matInput placeholder="Description" id="itemDes" [(ngModel)]="itemDes" name="itemDes">
     </mat-form-field> <br>
 
-    <mat-form-field>
+    <mat-form-field appearance="fill">
         <input matInput placeholder="Serial #" id="itemSerial" [(ngModel)]="itemSerial" name="itemSerial">
     </mat-form-field> <br>
 
-    <mat-form-field>
+    <mat-form-field appearance="fill">
         <input matInput placeholder="Cost (USD)" id="itemCost" [(ngModel)]="itemCost" name="itemCost">
     </mat-form-field> <br>
 
-    <mat-form-field>
+    <mat-form-field appearance="fill">
         <input matInput placeholder="Quantity" id="itemQty" [(ngModel)]="itemQty" name="itemQty">
     </mat-form-field> <br>
 

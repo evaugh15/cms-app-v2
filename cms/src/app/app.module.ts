@@ -36,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AssetsService } from './assets.service';
 import { FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { DialogComponent } from './dialog/dialog.component';
     MatDialogModule,
     FormsModule,
     MatFormFieldModule,
+    MatSelectModule,
     MatInputModule,
     MatTableModule,
     LayoutModule,
