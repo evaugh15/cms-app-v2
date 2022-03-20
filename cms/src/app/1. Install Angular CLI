@@ -1,0 +1,21 @@
+1. Install Angular CLI
+    -> npm i @angular/cli
+
+2. Create new Angular App
+    -> ng new [application name]
+
+3. Angular Material / Bootstrap
+    -> ng add @angular/material
+
+4. Run the App
+    -> ng serve
+
+5. Generate common module -> layout
+    -> ng g module layout
+
+6. Generate common components
+    -> ng g c header
+    -> ng g c sidebar (optional)
+    -> ng g c footer
+
+7. Import the common module -> layout into App Module

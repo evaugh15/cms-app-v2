@@ -1,34 +1,32 @@
-<div class="divform">
-    <h3>{{mode}} Asset Form</h3>
-    <br>
-    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
-        <mat-form-field>
-            <input matInput placeholder="Name" id="itemName" [(ngModel)]="itemName" name="itemName" required>
-        </mat-form-field>
+<h3>Asset Form</h3>
+<hr>
+<form>
+    <mat-form-field>
+        <input matInput placeholder="Name" id="itemName" name="itemName" required>
+    </mat-form-field> <br>
 
-        <mat-form-field>
-            <input matInput placeholder="Model" id="itemModel" [(ngModel)]="itemModel" name="itemModel" required>
-        </mat-form-field>
-<br>
-        <mat-form-field>
-            <input matInput placeholder="Description" id="itemDes" [(ngModel)]="itemDes" name="itemDes">
-        </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Model" id="itemModel" name="itemModel" required>
+    </mat-form-field> <br>
 
-        <mat-form-field>
-            <input matInput placeholder="Serial No." id="itemSerial" [(ngModel)]="itemSerial" name="itemSerial">
-        </mat-form-field>
-<br>
-        <mat-form-field>
-            <input matInput placeholder="Cost (USD)" id="itemCost" [(ngModel)]="itemCost" name="itemCost">
-        </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Description" id="itemDes" name="itemDes">
+    </mat-form-field> <br>
 
-        <mat-form-field>
-        <input matInput placeholder="Quantity" id="itemQty" [(ngModel)]="itemQty" name="itemQty">
-        </mat-form-field>
-<br> <!--mat-form-field-->
+    <mat-form-field>
+        <input matInput placeholder="Serial #" id="itemSerial" name="itemSerial">
+    </mat-form-field> <br>
+
+    <mat-form-field>
+        <input matInput placeholder="Cost (USD)" id="itemCost" name="itemCost">
+    </mat-form-field> <br>
+
+    <mat-form-field>
+        <input matInput placeholder="Quantity" id="itemQty" name="itemQty">
+    </mat-form-field> <br>
+
     <p>
-    <button type="submit" mat-raised-button color="warn">Submit</button>
-    <button class= "b1"><a type="submit" mat-raised-button color="warn" routerLink="/listassets">List Assets</a></button> <br>
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+        <button type="reset" mat-raised-button color="accent">Reset</button>
     </p>
-    </form>
-    </div>
+</form>
