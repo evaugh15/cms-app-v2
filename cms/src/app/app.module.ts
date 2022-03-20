@@ -16,6 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { ListAssetsComponent } from './assets/list-assets/list-assets.component';
 import { ViewAssetComponent } from './assets/view-asset/view-asset.component';
@@ -38,10 +39,13 @@ import { FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { UsersService } from './users.service';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    //routingComponents,
     HomeComponent,
     NotFoundComponent,
     ListUsersComponent,
@@ -54,7 +58,9 @@ import { UsersService } from './users.service';
     AddAssetComponent,
     EditAssetComponent,
     DeleteAssetComponent,
-    DialogComponent
+    DialogComponent,
+    SignupFormComponent,
+    LoginFormComponent
 
   ],
   imports: [
@@ -71,6 +77,7 @@ import { UsersService } from './users.service';
     MatButtonModule,
     MatTooltipModule,
     MatDialogModule,
+    MatRadioModule,
     FormsModule,
     MatFormFieldModule,
     MatSelectModule,

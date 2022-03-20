@@ -6,6 +6,7 @@ import { EditAssetComponent } from './assets/edit-asset/edit-asset.component';
 import { ListAssetsComponent } from './assets/list-assets/list-assets.component';
 import { ViewAssetComponent } from './assets/view-asset/view-asset.component';
 import { HomeComponent } from './home/home.component';
+//import { LoginFormComponent } from './login-form/login-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { DeleteUserComponent } from './users/delete-user/delete-user.component';
@@ -15,6 +16,7 @@ import { ViewUserComponent } from './users/view-user/view-user.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent }, //home path
+  //{ path: 'login', component: LoginFormComponent},
 
 // paths for User Module
   { path: 'create-user', component: AddUserComponent },
@@ -38,3 +40,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+//export const routingComponents = [LoginFormComponent]
