@@ -6,8 +6,9 @@ import { EditAssetComponent } from './assets/edit-asset/edit-asset.component';
 import { ListAssetsComponent } from './assets/list-assets/list-assets.component';
 import { ViewAssetComponent } from './assets/view-asset/view-asset.component';
 import { HomeComponent } from './home/home.component';
-//import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { DeleteUserComponent } from './users/delete-user/delete-user.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
@@ -15,8 +16,10 @@ import { ListUsersComponent } from './users/list-users/list-users.component';
 import { ViewUserComponent } from './users/view-user/view-user.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent }, //home path
-  //{ path: 'login', component: LoginFormComponent},
+  { path: 'login', component: LoginFormComponent}, //login path
+  { path: 'signup', component: SignupFormComponent}, //signup path
 
 // paths for User Module
   { path: 'create-user', component: AddUserComponent },
@@ -26,11 +29,11 @@ const routes: Routes = [
   { path: 'edit-user/:id', component: EditUserComponent },
 
 // paths for Asset Module
-  { path: 'create-asset', component: AddAssetComponent },
-  { path: 'view-asset/:id', component: ViewAssetComponent },
-  { path: 'list-assets', component: ListAssetsComponent },
-  { path: 'delete-asset/:id', component: DeleteAssetComponent },
-  { path: 'edit-asset/:id', component: EditAssetComponent },
+  { path: 'assets', component: AddAssetComponent },
+  //{ path: 'viewAsset/:id', component: ViewAssetComponent },
+  { path: 'listassets', component: ListAssetsComponent },
+  //{ path: 'deleteasset/:id', component: DeleteAssetComponent },
+  { path: 'editAssets/:id', component: EditAssetComponent },
 
   { path: '**', component: NotFoundComponent }
 ];

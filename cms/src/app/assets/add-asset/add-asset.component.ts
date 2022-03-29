@@ -69,7 +69,7 @@ export class AddAssetComponent implements OnInit {
     if (this.mode == 'Edit')
       this._myService.updateItem(this.id, this.itemName, this.itemModel, this.itemDes, this.itemSerial, this.itemCost,
         this.itemQty);
-    this.router.navigate(['/list-assets']);
+    this.router.navigate(['/listassets']);
   } 
 
 

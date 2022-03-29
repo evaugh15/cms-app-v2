@@ -1,1 +1,37 @@
-<p>signup-form works!</p>
+<!-- style="text-align: center;" -->
+<div>
+    <mat-card>
+      <mat-card-title>Sign Up</mat-card-title>
+      <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <p>
+            <mat-form-field>
+              <input type="text" matInput placeholder="First Name" formControlName="firstName">
+            </mat-form-field>
+            </p>
+        <p>
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Last Name" formControlName="lastName">
+                </mat-form-field>
+        </p> 
+         <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Username" formControlName="username">
+          </mat-form-field>
+          </p>
+          <p>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password">
+          </mat-form-field> 
+          </p>
+          <p *ngIf="error" class="error">
+            {{ error }}
+          </p>
+        <div class="button">
+          <button mat-raised-button color="primary" type="submit" >Sign Up</button>
+        </div>
+      </form>
+      </mat-card-content>
+       <p>Already have an account? Sign in <a href="/login">Here</a></p>
+    </mat-card>
+  </div>

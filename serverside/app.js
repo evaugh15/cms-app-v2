@@ -6,7 +6,7 @@ const Item = require('./models/assets');
 // const Assets = require('./models/assets');
 //connect and display the status 
 
-mongoose.connect('mongodb://localhost:27017/devices', { useNewUrlParser: true,  useUnifiedTopology: true })    
+mongoose.connect('mongodb+srv://evaugh15:pgrOb7CQ7tRGtUrr@cluster0.ajypq.mongodb.net/MyFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true,  useUnifiedTopology: true })    
     .then(() => { console.log("connected"); })
     .catch(() => { console.log("error connecting"); });
 

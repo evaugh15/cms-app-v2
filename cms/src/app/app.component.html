@@ -4,6 +4,9 @@
         <button mat-raised-button routerLink="/home" style="font-size: x-large;">Content Manager 2.0</button>
       </span>
       <span class="example-spacer"></span>
+      <button mat-icon-button routerLink="/login" matTooltip="CLICK HERE TO LOGIN!" class="person-icon" aria-label="icon-button with person icon">
+        <mat-icon>person</mat-icon>
+      </button>
       <button mat-icon-button matTooltip="Home" routerLink="/home" class="home-icon" aria-label="icon-button with home icon">
         <mat-icon>home</mat-icon>
       </button>
@@ -15,9 +18,6 @@
       </button>
       <button mat-icon-button (click)="onOpenDialog()" matTooltip="Help" class="help_outline-icon" aria-label="icon-button with help_outline icon">
         <mat-icon>help_outline</mat-icon>
-      </button>
-      <button mat-icon-button (click)="onOpenDialog()" matTooltip="User Settings" class="person-icon" aria-label="icon-button with person icon">
-        <mat-icon>person</mat-icon>
       </button>
     </mat-toolbar-row>
 
@@ -32,13 +32,13 @@
         </mat-menu>
 
         <mat-menu #assets="matMenu">
-          <button mat-menu-item routerLink="/list-assets">View Assets</button>
-          <button mat-menu-item routerLink="/create-asset">Add Asset</button>
+          <button mat-menu-item routerLink="/listassets">View Assets</button>
+          <button mat-menu-item routerLink="/assets">Add Asset</button>
         </mat-menu>
 
         <mat-menu #users="matMenu">
-          <button mat-menu-item routerLink="/list-users">View Users</button>
-          <button mat-menu-item routerLink="/create-user">Add User</button>
+          <button mat-menu-item routerLink="/listusers">View Users</button>
+          <button mat-menu-item routerLink="/createuser">Add User</button>
         </mat-menu>
 
     </mat-toolbar-row>

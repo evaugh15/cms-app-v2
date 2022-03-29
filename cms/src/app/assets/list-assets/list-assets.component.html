@@ -5,7 +5,7 @@
     <h3>This page displays a list of all assets that have been added in the database.</h3>
 </div>
 <br>
-<button mat-raised-button color="warn" routerLink="/create-asset">+ Add Asset</button><br>
+<button mat-raised-button color="warn" routerLink="/assets">+ Add Asset</button><br>
 <br>
 <table>
     <span class="listassets">{{item.id}}, {{item.name}}</span> 
@@ -28,6 +28,6 @@
     <td>{{item.itemCost}}</td>
     <td>{{item.itemQty}}</td>
     <td><button id="b1" mat-button color="warn" (click)="onDelete(item._id)">DELETE</button>
-    <br><button mat-raised-button color="primary" id="b1" [routerLink]="['/edit-asset', item._id]">UPDATE</button></td>
+    <br><button mat-raised-button color="primary" id="b1" [routerLink]="['/editAssets', item._id]">UPDATE</button></td>
   </tr>
 </table>

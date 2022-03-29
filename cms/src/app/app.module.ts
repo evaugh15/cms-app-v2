@@ -36,6 +36,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AssetsService } from './assets.service';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { UsersService } from './users.service';
@@ -79,6 +80,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
     MatDialogModule,
     MatRadioModule,
     FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
