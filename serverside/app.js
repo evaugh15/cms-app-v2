@@ -1,16 +1,26 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express();
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 const Item = require('./models/assets');
 // const Assets = require('./models/assets');
 //connect and display the status 
 
-mongoose.connect('mongodb+srv://evaugh15:pgrOb7CQ7tRGtUrr@cluster0.ajypq.mongodb.net/MyFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true,  useUnifiedTopology: true })    
-    .then(() => { console.log("connected"); })
-    .catch(() => { console.log("error connecting"); });
+//const url = 'mongodb://127.0.0.1:27017/devices'
+//mongoose.connect(url, { useNewUrlParser: true,  useUnifiedTopology: true })    
+//    .then(() => { console.log("database connected: ", url); })
+//    .catch(() => { console.log("error connecting"); });
 
-    //const baseAPI = '/api/v1/';
+//const baseAPI = '/api/v1/';
+
+const uri = "mongodb+srv://evaugh15:pgrOb7CQ7tRGtUrr@cluster0.ajypq.mongodb.net/devices?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("devices").collection("assets");
+  // perform actions on the collection object
+  client.close();
+});
 
 //specify which domains can make requests and which methods are allowed
 app.use((req, res, next) => {
