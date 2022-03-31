@@ -14,7 +14,7 @@ const Item = require('./models/assets');
 
 //const baseAPI = '/api/v1/';
 
-const uri = "mongodb+srv://evaugh15:pgrOb7CQ7tRGtUrr@cluster0.ajypq.mongodb.net/devices?retryWrites=true&w=majority";
+const uri = "mongodb+srv://evaugh15:pgrOb7CQ7tRGtUrr@cluster0.ajypq.mongodb.net/devices";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
   const collection = client.db("devices").collection("assets");
