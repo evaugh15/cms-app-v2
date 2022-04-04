@@ -20,7 +20,7 @@ export class UsersService {
      //Uses http.post() to post data 
 addUser(Name: string, userTitle: string, userEmail: string, userPhone: string, userName: string, userDept: string) 
 {
-this.http.post('http://localhost:8000/devices',{ Name, userTitle, userEmail, userPhone, userName, userDept })
+this.http.post('http://localhost:8000/users',{ Name, userTitle, userEmail, userPhone, userName, userDept })
     .subscribe((responseData) => {
         console.log(responseData);
     }); 

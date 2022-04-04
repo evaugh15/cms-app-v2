@@ -1,4 +1,3 @@
-
 <br>
 <div>
     <h1>Asset List</h1>
@@ -27,7 +26,11 @@
     <td>{{item.itemSerial}}</td>
     <td>{{item.itemCost}}</td>
     <td>{{item.itemQty}}</td>
-    <td><button id="b1" mat-button color="warn" (click)="onDelete(item._id)">DELETE</button>
-    <br><button mat-raised-button color="primary" id="b1" [routerLink]="['/editAssets', item._id]">UPDATE</button></td>
+    <td><button id="b1" mat-button color="warn" (click)="onDelete(item._id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-button color="primary" id="b1" [routerLink]="['/editAssets', item._id]">
+      <mat-icon>edit</mat-icon>
+    </button></td>
   </tr>
 </table>

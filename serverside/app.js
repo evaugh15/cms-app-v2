@@ -7,19 +7,21 @@ const Item = require('./models/assets');
 // const Assets = require('./models/assets');
 //connect and display the status 
 
-//const url = 'mongodb://127.0.0.1:27017/devices'
-//mongoose.connect(url, { useNewUrlParser: true,  useUnifiedTopology: true })    
-//    .then(() => { console.log("database connected: ", url); })
-//    .catch(() => { console.log("error connecting"); });
+mongoose.connect('mongodb://evaugh15:abc1234@cluster0-shard-00-00.ajypq.mongodb.net:27017,cluster0-shard-00-01.ajypq.mongodb.net:27017,cluster0-shard-00-02.ajypq.mongodb.net:27017/devices?ssl=true&replicaSet=atlas-ohwgae-shard-0&authSource=admin&retryWrites=true&w=majority',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }
+);
 
-//const baseAPI = '/api/v1/';
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+    console.log("Connected Successfully");
+});
 
-const uri = "mongodb+srv://evaugh15:pgrOb7CQ7tRGtUrr@cluster0.ajypq.mongodb.net/devices";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-  const collection = client.db("devices").collection("assets");
-  // perform actions on the collection object
-  client.close();
+app.listen(8000, () => {
+    console.log("Server is running on port 8000");
 });
 
 //specify which domains can make requests and which methods are allowed
