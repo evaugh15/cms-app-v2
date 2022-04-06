@@ -33,7 +33,7 @@ updateUser(peopleId: string, Name: string, userDept: string, userEmail: string, 
    this.http.put("http://localhost:8000/users/" + 
    peopleId, { Name, userDept, userEmail, userName, userPhone, userTitle})
     .subscribe(() => {
-        console.log('Updated: ' + capstoneId);
+        console.log('Updated: ' +  peopleId);
     });
 }
 
