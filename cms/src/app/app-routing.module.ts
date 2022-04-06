@@ -26,7 +26,7 @@ const routes: Routes = [
  //{ path: 'view-user/:id', component: ViewUserComponent },
   { path: 'list-users', component: ListUsersComponent },
  //{ path: 'delete-user/:id', component: DeleteUserComponent },
-  { path: 'edit-user/:_id', component: EditUserComponent },
+  { path: 'edit-user/:_id', component: AddUserComponent },
 
 // paths for Asset Module
   { path: 'assets', component: AddAssetComponent },
