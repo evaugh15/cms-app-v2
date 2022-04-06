@@ -33,7 +33,7 @@ const routes: Routes = [
   //{ path: 'viewAsset/:id', component: ViewAssetComponent },
   { path: 'listassets', component: ListAssetsComponent },
   //{ path: 'deleteasset/:id', component: DeleteAssetComponent },
-  { path: 'editAssets/:id', component: EditAssetComponent },
+  { path: 'editAssets/:_id', component: AddAssetComponent },
 
   { path: '**', component: NotFoundComponent }
 ];
