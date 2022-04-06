@@ -1,29 +1,13 @@
 <h3>Add Users Here!</h3>
 <hr>
-<form>
+<form (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Name" id="Name" name="Name" required>
-    </mat-form-field> <br>
-
-    <mat-form-field appearance="fill">
-        <input matInput placeholder="Title" id="userTitle" name="userTitle" required>
-    </mat-form-field> <br>
-
-    <mat-form-field appearance="fill">
-        <input matInput placeholder="Email" id="userEmail" name="userEmail" required>
-    </mat-form-field> <br>
-
-    <mat-form-field appearance="fill">
-        <input matInput placeholder="Phone Number" id="userPhone" name="userPhone">
-    </mat-form-field> <br>
-
-    <mat-form-field appearance="fill">
-        <input matInput placeholder="Username" id="userName" name="userName">
+        <input matInput placeholder="Name" id="Name" [(ngModel)]="Name" name="Name" required>
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
         <mat-label>Department</mat-label>
-        <mat-select matInput placeholder="Department" id="userDept" name="userDept">
+        <mat-select matInput placeholder="Department" id="userDept" [(ngModel)]="userDept" name="userDept">
             <mat-option value="infoSec">Information Security</mat-option>
             <mat-option value="serviceDesk">Service Desk</mat-option>
             <mat-option value="network">Network Ops</mat-option>
@@ -31,8 +15,24 @@
         
     </mat-form-field> <br>
 
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Email" id="userEmail" [(ngModel)]="userEmail" name="userEmail" required>
+    </mat-form-field> <br>
+
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Username" id="userName" [(ngModel)]="userName" name="userName">
+    </mat-form-field> <br>
+
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Phone" id="userPhone" [(ngModel)]="userPhone" name="userPhone">
+    </mat-form-field> <br>
+
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="User Title" id="userTitle" [(ngModel)]="userTitle" name="userTitle" required>
+    </mat-form-field> <br>
+
     <p>
-        <button type="submit" mat-raised-button color="primary">Submit</button>
+        <button type="submit" mat-raised-button color="warn">Submit</button><br>
         <button type="reset" mat-raised-button color="accent">Reset</button>
     </p>
 </form>
