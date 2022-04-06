@@ -4,6 +4,7 @@ const app = express();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 const Item = require('./models/assets');
+const People = require('./models/users');
 // const Assets = require('./models/assets');
 //connect and display the status 
 
@@ -133,66 +134,97 @@ app.post('/devices', (req, res, next) => {
         });
     });
     
-
-
-   //to use this middleware in other parts of the application
-    
-    module.exports=app;
-
-/*
-//in the app.get() method below we add a path for the patients API 
-//by adding /patients, we tell the server that this method will be called every time http://localhost:8080/assets is requested. 
-app.get('/assets', (req, res, next) => {
-    //we will add an array named students to pretend that we received this data from the database
-    //call mongoose method find (MongoDB db.item.find())
-    item.find()
+app.get('/users', (req, res, next) => {
+        //we will add an array named students to pretend that we received this data from the database
+        People.find() 
         //if data is returned, send data as a response 
         .then(data => res.status(200).json(data))
         //if error, send internal server error
         .catch(err => {
-            console.log('Error: ${err}');
-            res.status(500).json(err);
-        });
-});
-//find a asset based on the id
-app.get('/assets/:_id', (req, res, next) => {
-    //call mongoose method findOne (MongoDB db.item.findOne())
-    item.findOne({_id: req.params.id})
-        //if data is returned, send data as a response 
-        .then(data => {
-            res.status(200).json(data)
-            console.log(data);
-        })
-        //if error, send internal server error
-        .catch(err => {
-            console.log('Error: ${err}');
-            res.status(500).json(err);
-        });
-});
-//serve incoming put requests to /assets
-app.put('/assets/:id', (req, res, next) => {
-    console.log("id: " + req.params.id)
-    // create a new patient variable and save request’s fields 
-    const asset = new Asset({
-        Name: req.body.Name,
-        Model: req.body.Model,
-        Desc: req.body.Desc,
-        Serial: req.body.Serial,
-        Cost: req.body.Cost,
-        Qty: req.body.Qty
+        console.log('Error: ${err}');
+        res.status(500).json(err);
     });
+    
+    //find a student based on the id
+    app.get('/users/:_id', (req, res, next) => {
+        //call mongoose method findOne (MongoDB db.Students.findOne())
+        People.findOne({_id: req.params.id}) 
+            //if data is returned, send data as a response 
+            .then(data => {
+                res.status(200).json(data)
+                console.log(data);
+            })
+            //if error, send internal server error
+            .catch(err => {
+            console.log('Error: ${err}');
+            res.status(500).json(err);
+        });
+    });
+        //serve incoming put requests to /students 
+        app.put('/users/:id', (req, res, next) => { 
+            console.log("id: " + req.params.id) 
+            // check that the parameter id is valid 
+            if (mongoose.Types.ObjectId.isValid(req.params.id)) { 
+                //find a document and set new first and last names 
+                People.findOneAndUpdate( 
+                    {_id: req.params.id}, 
+                    {$set:{ 
+                        Name: req.body.Name, 
+                        userDept: req.body.userDept,
+                        userEmail: req.body.userEmail,
+                        userName: req.body.userName,
+                        userPhone: req.body.userPhone,
+                        userTitle: req.body.userTitle
+                    }}, 
+                    {new:true} 
+                ) 
+                .then((people) => { 
+                    if (people) { //what was updated 
+                        console.log(people); 
+                    } else { 
+                        console.log("no data exist for this id"); 
+                    } 
+                }) 
+                .catch((err) => { 
+                    console.log(err); 
+                }); 
+            } else { 
+                console.log("please provide correct id"); 
+            } 
+    });
+    
+    
+    });
+    
+    //serve incoming post requests to /students
+    app.post('/users', (req, res, next) => {
+        
+        // create a new doctor variable and save requestâs fields 
+    const people = new People({
+        Name: req.body.Name, 
+        userDept: req.body.userDept,
+        userEmail: req.body.userEmail,
+        userName: req.body.userName,
+        userPhone: req.body.userPhone,
+        userTitle: req.body.userTitle
+});
+    
     //send the document to the database 
-    item.save()
+    people.save()
         //in case of success
-        .then(() => { console.log('Success'); })
+        .then(() => { console.log('Success');})
         //if error
-        .catch(err => { console.log('Error:' + err); });
-    //:id is a dynamic parameter that will be extracted from the URL
-    app.delete("/assets/:id", (req, res, next) => {
-        item.deleteOne({ _id: req.params.id }).then(result => {
+        .catch(err => {console.log('Error:' + err);});
+                        
+    });
+        //:id is a dynamic parameter that will be extracted from the URL
+    app.delete("/users/:id", (req, res, next) => {
+        People.deleteOne({ _id: req.params.id }).then(result => {
             console.log(result);
-            res.status(200).json("Deleted!");
+            res.status(200).json("User Deleted!");
         });
     });
-});
-*/
+
+   //to use this middleware in other parts of the application
+    
+    module.exports=app;
