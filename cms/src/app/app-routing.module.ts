@@ -23,10 +23,10 @@ const routes: Routes = [
 
 // paths for User Module
   { path: 'create-user', component: AddUserComponent },
-  { path: 'view-user/:id', component: ViewUserComponent },
+ //{ path: 'view-user/:id', component: ViewUserComponent },
   { path: 'list-users', component: ListUsersComponent },
-  { path: 'delete-user/:id', component: DeleteUserComponent },
-  { path: 'edit-user/:id', component: EditUserComponent },
+ //{ path: 'delete-user/:id', component: DeleteUserComponent },
+  { path: 'edit-user/:_id', component: EditUserComponent },
 
 // paths for Asset Module
   { path: 'assets', component: AddAssetComponent },
