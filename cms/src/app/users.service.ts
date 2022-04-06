@@ -18,34 +18,34 @@ export class UsersService {
   }
 
      //Uses http.post() to post data 
-addUser(Name: string, userTitle: string, userEmail: string, userPhone: string, userName: string, userDept: string) 
+addUser(Name: string, userDept: string, userEmail: string, userName: string, userPhone: string, userTitle: string) 
 {
-this.http.post('http://localhost:8000/users',{ Name, userTitle, userEmail, userPhone, userName, userDept })
+this.http.post('http://localhost:8000/users',{ Name, userDept, userEmail, userName, userPhone, userTitle })
     .subscribe((responseData) => {
         console.log(responseData);
     }); 
 }
 
-updateUser(capstoneId: string, Name: string, userTitle: string, userEmail: string, userPhone: string, userName: string, userDept: string) 
+updateUser(peopleId: string, Name: string, userDept: string, userEmail: string, userName: string, userPhone: string, userTitle: string) 
 {
     //request path http://localhost:8000/assets/5xbd456xx 
-    //asset information will be send as HTTP body parameters 
+    //user information will be send as HTTP body parameters 
    this.http.put("http://localhost:8000/users/" + 
-   capstoneId, { Name, userTitle, userEmail, userPhone, userName, userDept })
+   peopleId, { Name, userDept, userEmail, userName, userPhone, userTitle})
     .subscribe(() => {
         console.log('Updated: ' + capstoneId);
     });
 }
 
- //Uses http.get() to request data based on student id 
- getUser(capstoneId: string) {
-  return this.http.get('http://localhost:8000/users/'+ capstoneId);
+ //Uses http.get() to request data based on user id 
+ getUser(peopleId: string) {
+  return this.http.get('http://localhost:8000/users/'+ peopleId);
 }
 
-deleteUser(capstoneId: string) {
-  this.http.delete("http://localhost:8000/users/" + capstoneId)
+deleteUser(peopleId: string) {
+  this.http.delete("http://localhost:8000/users/" + peopleId)
       .subscribe(() => {
-          console.log('Deleted: ' + capstoneId);
+          console.log('Deleted: ' + peopleId);
       });
   location.reload();
 }
