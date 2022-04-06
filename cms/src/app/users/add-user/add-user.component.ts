@@ -41,11 +41,11 @@ export class AddUserComponent implements OnInit {
           //populate the name, model, desc, serial, cost, qty
           //notice that this is done through the two-way bindings
           this.Name = this.user.Name;
-          this.userTitle = this.user.userTitle;
-          this.userEmail = this.user.userEmail;
-          this.userPhone = this.user.userPhone;
-          this.userName = this.user.userName;
           this.userDept = this.user.userDept;
+          this.userEmail = this.user.userEmail;
+          this.userName = this.user.userName;
+          this.userPhone = this.user.userPhone;
+          this.userTitle = this.user.userTitle;
         },
         err => console.error(err),
         () => console.log('finished loading')
@@ -59,16 +59,16 @@ export class AddUserComponent implements OnInit {
 
 }
   onSubmit() {
-    console.log("You submitted: " + this.Name + " " + this.userTitle + " " + this.userEmail + " " + this.userPhone
-      + " " + this.userName + " " + this.userDept);
+    console.log("You submitted: " + this.Name + " " + this.userDept + " " + this.userEmail + " " + this.userName
+      + " " + this.userPhone + " " + this.userTitle);
 
     if (this.mode == 'Add')
-      this._myService.addUser(this.Name ,this.userTitle, this.userEmail, this.userPhone, this.userName,
-      this.userDept);
+      this._myService.addUser(this.Name ,this.userDept, this.userEmail, this.userName, this.userPhone,
+      this.userTitle);
 
     if (this.mode == 'Edit')
-      this._myService.updateUser(this.id, this.Name ,this.userTitle, this.userEmail, this.userPhone, this.userName,
-        this.userDept);
+      this._myService.updateUser(this.id, this.Name ,this.userDept, this.userEmail, this.userName, this.userPhone,
+        this.userTitle);
     this.router.navigate(['/list-users']);
   } 
 }
