@@ -1,28 +1,24 @@
 
-button {
-    margin-left: 10%;
+.button-margin {
+  margin-left: 10%;
 }
 
 div {
     margin-left: 10%;
 }
 
-button {
-    margin-left: 10%;
-}
-
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
-    /**/
-    bottom: auto;
-  
+    width: 75%;
+    height: 90%;
+    margin-bottom: 25%;
+    overflow: auto;
   }
 
 th{
-  color: #1e5d88;
-  background-color: white;
+  color: white;
+  background-color: #673ab7;
 }
   
   td, th {
@@ -34,10 +30,14 @@ th{
   }
   
   tr:nth-child(odd) {
-    background-color: #1e5d88;
+    background-color:lighten($color: #673ab7, $amount: 40);
   }
 
   .b1{
     padding: 1px;
     margin:5px;
+  }
+
+  .table-padding {
+    padding-top: 10px;
   }

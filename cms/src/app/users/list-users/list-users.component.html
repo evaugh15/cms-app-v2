@@ -4,13 +4,13 @@
     <h3>This page displays a list of all users that have been added in the database.</h3>
 </div>
 <br>
-<button mat-raised-button color="warn" routerLink="/create-user">+ Add User</button><br>
+<button mat-raised-button color="warn" routerLink="/create-user" class="button-margin">+ Add User</button><br>
 
-<div>
+<div class="table-padding">
     <table>
     <!--routerLink="/detail/{{user.id}}"  <table *ngFor="let user of user let i = index"> --binds with == products.component.ts ( products = PRODUCTS)-->
       <table>
-          <span class="list-users">{{user.id}}, {{user.Name}}</span> 
+          <span class="list-users">{{user.id}} {{user.Name}}</span>
         <tr>
           <th>Internal ID</th>
           <th>Name</th>
@@ -30,8 +30,12 @@
           <td>{{user.userName}}</td>
           <td>{{user.userPhone}}</td>
           <td>{{user.userTitle}}</td>
-          <td><button id="b1" mat-button color="warn" (click)="onDelete(user._id)">DELETE</button>
-          <br><button mat-raised-button color="primary" id="b1" [routerLink]="['/edit-user', user._id]">UPDATE</button></td>
+          <td><button id="b1" mat-button color="warn" (click)="onDelete(user._id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-button color="primary" id="b1" [routerLink]="['/edit-user', user._id]">
+            <mat-icon>edit</mat-icon>
+          </button></td>
         </tr>
       </table>
     </table>
