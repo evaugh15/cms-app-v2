@@ -14,7 +14,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node webserver.js",
-    "build": "ng build",
+    
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "heroku-postbuild": "ng build --prod"
