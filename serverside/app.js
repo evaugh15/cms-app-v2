@@ -5,8 +5,6 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 const Item = require('./models/assets');
 const People = require('./models/users');
-// const Assets = require('./models/assets');
-//connect and display the status 
 
 mongoose.connect('mongodb://evaugh15:abc1234@cluster0-shard-00-00.ajypq.mongodb.net:27017,cluster0-shard-00-01.ajypq.mongodb.net:27017,cluster0-shard-00-02.ajypq.mongodb.net:27017/devices?ssl=true&replicaSet=atlas-ohwgae-shard-0&authSource=admin&retryWrites=true&w=majority',
     {
@@ -19,12 +17,6 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
     console.log("Connected Successfully");
-});
-
-const port = process.env.PORT || 8080;
-
-app.listen(port, () => {
-    console.log("Server is running on port " +port);
 });
 
 //specify which domains can make requests and which methods are allowed

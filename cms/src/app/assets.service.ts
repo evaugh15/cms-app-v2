@@ -14,13 +14,13 @@ export class AssetsService {
 
     // Uses http.get() to load data 
     getItems() {
-        return this.http.get('devices');
+        return this.http.get('http://localhost:8080/devices');
     }
 
     //Uses http.post() to post data 
 addItem(itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
     {
-    this.http.post('devices',{ itemName, itemModel, itemDes, itemSerial, itemCost, itemQty })
+    this.http.post('http://localhost:8080/devices',{ itemName, itemModel, itemDes, itemSerial, itemCost, itemQty })
         .subscribe((responseData) => {
             console.log(responseData);
         }); 
@@ -30,7 +30,7 @@ updateItem(capstoneId: string, itemName: string, itemModel: string, itemDes: str
     {
     //request path http://localhost:8000/assets/5xbd456xx 
     //asset information will be send as HTTP body parameters 
-        this.http.put("devices" + 
+        this.http.put("http://localhost:8080/devices" + 
        capstoneId, { itemName, itemModel, itemDes, itemSerial, itemCost, itemQty })
         .subscribe(() => {
             console.log('Updated: ' + capstoneId);
@@ -39,11 +39,11 @@ updateItem(capstoneId: string, itemName: string, itemModel: string, itemDes: str
 
     //Uses http.get() to request data based on student id 
     getItem(capstoneId: string) {
-        return this.http.get('devices'+ capstoneId);
+        return this.http.get('http://localhost:8080/devices'+ capstoneId);
     }
 
     deleteItem(capstoneId: string) {
-        this.http.delete("devices" + capstoneId)
+        this.http.delete("http://localhost:8080/devices" + capstoneId)
             .subscribe(() => {
                 console.log('Deleted: ' + capstoneId);
             });
