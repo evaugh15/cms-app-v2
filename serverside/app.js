@@ -41,17 +41,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 //app.use(cors())
 
-app.get('/', (req, res, next) => {
-
-    res.status(200).json({
-        status: 'success',
-        data: {
-            name: 'cms',
-            version: '0.1.0'
-        }
-    });
-});
-
 //in the app.get() method below we add a path for the assets API 
 //by adding /devices, we tell the server that this method will be called every time http://localhost:8000/devices is requested. 
 app.get('/devices', (req, res, next) => {
