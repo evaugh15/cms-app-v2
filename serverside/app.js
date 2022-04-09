@@ -5,8 +5,9 @@ const app = express();
 const mongoose = require('mongoose');
 const Item = require('./models/assets');
 const People = require('./models/users');
+const configFile = require('../serverside/config.json');
 
-mongoose.connect('mongodb://evaugh15:abc1234@cluster0-shard-00-00.ajypq.mongodb.net:27017,cluster0-shard-00-01.ajypq.mongodb.net:27017,cluster0-shard-00-02.ajypq.mongodb.net:27017/devices?ssl=true&replicaSet=atlas-ohwgae-shard-0&authSource=admin&retryWrites=true&w=majority',
+mongoose.connect('mongodb://' + configFile.dbuser + ':' + configFile.dbpass + '@cluster0-shard-00-00.ajypq.mongodb.net:27017,cluster0-shard-00-01.ajypq.mongodb.net:27017,cluster0-shard-00-02.ajypq.mongodb.net:27017/devices?ssl=true&replicaSet=atlas-ohwgae-shard-0&authSource=admin&retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
