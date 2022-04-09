@@ -39,10 +39,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //app.use(cors())
 
-app.use(express.static( __dirname + '../cms/dist'));
+app.use(express.static( __dirname + './cms/dist'));
 
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+'../cms/dist/index.html'))
+    res.sendFile(path.join(__dirname+'./cms/dist/index.html'))
 });
 
 //in the app.get() method below we add a path for the assets API 
