@@ -6,7 +6,7 @@
     "mongoose": "^6.2.7",
     "nodemon": "^2.0.15"
   },
-  "name": "cms-app-v2",
+  "name": "cms",
   "description": "test prototype",
   "version": "1.0.0",
   "main": "webserver.js",
