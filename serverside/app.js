@@ -41,6 +41,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 //app.use(cors())
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("build"));
+    app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+    });
+  }
+
 //in the app.get() method below we add a path for the assets API 
 //by adding /devices, we tell the server that this method will be called every time http://localhost:8000/devices is requested. 
 app.get('/devices', (req, res, next) => {

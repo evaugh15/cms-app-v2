@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "private": true,
   "dependencies": {
