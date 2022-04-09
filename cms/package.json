@@ -1,8 +1,13 @@
 {
   "name": "cms-app-v2",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
-   
+    "ng": "ng",
+    "start": "node webserver.js",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {

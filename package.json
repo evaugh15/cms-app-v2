@@ -12,12 +12,7 @@
   "main": "webserver.js",
   "devDependencies": {},
   "scripts": {
-    "ng": "ng",
-    "start": "node webserver.js",
-    
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "heroku-postbuild": "ng build --prod"
+
   },
   "repository": {
     "type": "git",
