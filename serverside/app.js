@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express();
-const { MongoClient, ServerApiVersion } = require('mongodb');
+//const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 const Item = require('./models/assets');
 const People = require('./models/users');
@@ -18,6 +18,23 @@ db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
     console.log("Connected Successfully");
 });
+
+function requireHTTPS(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+        return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
+}
+
+app.use(requireHTTPS);
+app.use(express.static('./dist/cms.json'));
+app.get('/*', function(req, res) {
+    res.sendFile('index.html', {root: 'dist/cms.json/'}
+  );
+  });
+
+app.listen(process.env.PORT || 8080);  
 
 //specify which domains can make requests and which methods are allowed
 app.use((req, res, next) => {
