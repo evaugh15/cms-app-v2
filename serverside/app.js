@@ -3,17 +3,21 @@ const bodyParser = require('body-parser');
 const app = express();
 //const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
+const path = require('path');
 const Item = require('./models/assets');
 const People = require('./models/users');
 const configFile = require('../serverside/config.json');
 
+// reference the db credentials from an external file. Never hard code credentials within source code.
+// unencrypted properties file isn't too much better, but can be controlled and allows for credentials to be updated by admins without
+// also requiring the app to be recompiled/redeployed/etc
+// see also: CWE 798 "Use of Hard-coded Credentials" https://cwe.mitre.org/data/definitions/798.html
 mongoose.connect('mongodb://' + configFile.dbuser + ':' + configFile.dbpass + '@cluster0-shard-00-00.ajypq.mongodb.net:27017,cluster0-shard-00-01.ajypq.mongodb.net:27017,cluster0-shard-00-02.ajypq.mongodb.net:27017/devices?ssl=true&replicaSet=atlas-ohwgae-shard-0&authSource=admin&retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }
 );
-
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
@@ -30,10 +34,16 @@ app.use((req, res, next) => {
     next();
 });
 //parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 //parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 //app.use(cors())
+
+app.use(express.static( __dirname + '/dist'));
+
+app.get('/', function(req, res){
+    res.sendFile(path.join(__dirname+'/dist/index.html'))
+});
 
 //in the app.get() method below we add a path for the assets API 
 //by adding /devices, we tell the server that this method will be called every time http://localhost:8000/devices is requested. 

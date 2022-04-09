@@ -12,8 +12,12 @@
   "main": "webserver.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node webserver.js"
+    "ng": "ng",
+    "start": "node webserver.js",
+    "build": "ng build --prod",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "heroku-postbuild": "ng build --prod"
   },
   "repository": {
     "type": "git",
