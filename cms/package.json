@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "nodemon webserver.js",
+    "start": "node webserver.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "ese": "ng e2e",
     "heroku-postbuild": "ng build --prod"
   },
   "private": true,
