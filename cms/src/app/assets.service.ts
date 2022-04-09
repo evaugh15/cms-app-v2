@@ -26,11 +26,11 @@ addItem(itemName: string, itemModel: string, itemDes: string, itemSerial: string
         }); 
     }
 
-    updateItem(capstoneId: string, itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
+updateItem(capstoneId: string, itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
     {
-        //request path http://localhost:8000/assets/5xbd456xx 
-        //asset information will be send as HTTP body parameters 
-       this.http.put("http://localhost:8000/devices/" + 
+    //request path http://localhost:8000/assets/5xbd456xx 
+    //asset information will be send as HTTP body parameters 
+        this.http.put("http://localhost:8000/devices/" + 
        capstoneId, { itemName, itemModel, itemDes, itemSerial, itemCost, itemQty })
         .subscribe(() => {
             console.log('Updated: ' + capstoneId);

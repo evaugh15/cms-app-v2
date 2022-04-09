@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AssetsService } from '../../assets.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Router } from '@angular/router';
@@ -10,18 +11,29 @@ import { Router } from '@angular/router';
 })
 export class AddAssetComponent implements OnInit {
 
-  @Input() itemName!: string;
-  @Input() itemModel!: string;
-  @Input() itemDes!: string;
-  @Input() itemSerial!: string;
-  @Input() itemCost!: string;
-  @Input() itemQty!: string;
+  @Input() itemName: string = "";
+  @Input() itemModel: string = "";
+  @Input() itemDes: string = "";
+  @Input() itemSerial: string = "";
+  @Input() itemCost: string = "";
+  @Input() itemQty: string = "";
 
   public mode = 'Add'; //default mode
   private id: any; //asset ID
   private asset: any;
 
-  constructor(private _myService: AssetsService, 
+profileForm = this.fb.group({
+  itemName: ['', Validators.required],
+  itemModel: ['', Validators.required],
+  itemDes: [''],
+  itemSerial: [''],
+  itemCost: [''],
+  itemQty: ['']
+})
+
+  constructor(
+  private fb: FormBuilder,
+  private _myService: AssetsService, 
   private router: Router, 
   public route: ActivatedRoute) { }
 
@@ -69,6 +81,7 @@ export class AddAssetComponent implements OnInit {
     if (this.mode == 'Edit')
       this._myService.updateItem(this.id, this.itemName, this.itemModel, this.itemDes, this.itemSerial, this.itemCost,
         this.itemQty);
+    alert("Asset information saved!")    
     this.router.navigate(['/listassets']);
   } 
 
