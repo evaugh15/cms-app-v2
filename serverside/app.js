@@ -28,9 +28,9 @@ function requireHTTPS(req, res, next) {
 }
 
 app.use(requireHTTPS);
-app.use(express.static('./cms/dist/cms/'));
+app.use(express.static('/cms/dist/cms/'));
 app.get('/*', function(req, res) {
-    res.sendFile('index.html', {root: './cms/dist/cms/'}
+    res.sendFile('index.html', {root: '/cms/dist/cms/'}
   );
   });
 
