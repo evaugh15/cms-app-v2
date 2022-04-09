@@ -5,6 +5,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 const Item = require('./models/assets');
 const People = require('./models/users');
+const port = process.env.PORT || 8080;
 // const Assets = require('./models/assets');
 //connect and display the status 
 

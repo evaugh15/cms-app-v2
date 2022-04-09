@@ -14,22 +14,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class LoginFormComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
-
     username: new FormControl(''),
-
     password: new FormControl(''),
-
   });
 
   submit() {
-
     if (this.form.valid) {
-
       this.submitEM.emit(this.form.value);
-
     }
-
   }
+
+  
 
   @Input() error!: string | null;
 
