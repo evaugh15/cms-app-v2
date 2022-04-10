@@ -4,8 +4,8 @@ const app = express();
 //const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 const path = require('path');
-const Item = require('./models/assets');
-const People = require('./models/users');
+const Item = require('../serverside/models/assets');
+const People = require('../serverside/models/users');
 const configFile = require('../serverside/config.json');
 
 // reference the db credentials from an external file. Never hard code credentials within source code.

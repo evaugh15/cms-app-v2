@@ -1,6 +1,5 @@
 const http = require('https');
-const express = require('express')
-const app = express();
+const app = require('./cms/app');
 const server = http.createServer(app);
 const port = process.env.PORT || 8080;
 
