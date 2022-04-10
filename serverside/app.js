@@ -24,8 +24,8 @@ db.once("open", function () {
     console.log("Connected Successfully");
 });
  
-app.get("/", function(req, res) {
-    res.send("Good morning.")
+app.get("/home", function(req, res) {
+    res.render("home")
 });
 
 
