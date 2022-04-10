@@ -25,7 +25,7 @@ db.once("open", function () {
 });
  
 app.get("/", function(req, res) {
-    res.send("/home")
+    res.redirect('/home')
 });
 
 
