@@ -24,9 +24,8 @@ db.once("open", function () {
     console.log("Connected Successfully");
 });
  
-app.get("/", function(req, res) {
-    res.redirect('/home')
-});
+var distDir = __dirname + "/dist/";
+ app.use(express.static(distDir));
 
 
 //specify which domains can make requests and which methods are allowed
