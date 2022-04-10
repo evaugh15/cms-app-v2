@@ -2,27 +2,27 @@
 <hr>
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" #myForm="ngForm">
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Name" formControlName="itemName" id="itemName" [(ngModel)]="itemName" name="itemName" required>
+        <input matInput placeholder="Name" formControlName="itemName" [(ngModel)]="itemName" name="itemName" type="text" required>
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Model" formControlName="itemModel" id="itemModel" [(ngModel)]="itemModel" name="itemModel" required>
+        <input matInput placeholder="Model" formControlName="itemModel" [(ngModel)]="itemModel" name="itemModel" required>
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Description" formControlName="itemDes" id="itemDes" [(ngModel)]="itemDes" name="itemDes">
+        <input matInput placeholder="Description" formControlName="itemDes" [(ngModel)]="itemDes" name="itemDes">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Serial #" formControlName="itemSerial" id="itemSerial" [(ngModel)]="itemSerial" name="itemSerial">
+        <input matInput placeholder="Serial #" formControlName="itemSerial" [(ngModel)]="itemSerial" name="itemSerial">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Cost (USD)" formControlName="itemCost" id="itemCost" [(ngModel)]="itemCost" name="itemCost">
+        <input matInput placeholder="Cost (USD)" formControlName="itemCost" [(ngModel)]="itemCost" name="itemCost">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Quantity" formControlName="itemQty" id="itemQty" [(ngModel)]="itemQty" name="itemQty">
+        <input matInput placeholder="Quantity" formControlName="itemQty" [(ngModel)]="itemQty" name="itemQty">
     </mat-form-field> <br>
 
     <p>

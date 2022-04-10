@@ -60,7 +60,7 @@ app.get('/devices', (req, res, next) => {
     });
 
     //find a asset based on the id
-app.get('/devices/:_id', (req, res, next) => {
+app.get('/devices/:id', (req, res, next) => {
     //call mongoose method findOne (MongoDB db.Assets.findOne())
     Item.findOne({_id: req.params.id}) 
         //if data is returned, send data as a response 
@@ -75,7 +75,7 @@ app.get('/devices/:_id', (req, res, next) => {
     });
 });
 
-//serve incoming put requests to /students 
+//serve incoming put requests to /devices
 app.put('/devices/:id', (req, res, next) => { 
     console.log("id: " + req.params.id) 
     // check that the parameter id is valid 

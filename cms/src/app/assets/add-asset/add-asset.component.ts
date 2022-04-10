@@ -37,14 +37,14 @@ profileForm = this.fb.group({
   private router: Router, 
   public route: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('_id')) {
         this.mode = 'Edit'; /*request had a parameter _id */
         this.id = paramMap.get('_id');
 
         //request asset info based on the id
-      this._myService.getItem(this.id).subscribe(
+        this._myService.getItem(this.id).subscribe(
           data => {
             //read data and assign to private variable asset
             this.asset = data;

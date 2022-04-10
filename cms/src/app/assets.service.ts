@@ -26,27 +26,31 @@ addItem(itemName: string, itemModel: string, itemDes: string, itemSerial: string
         }); 
     }
 
-updateItem(capstoneId: string, itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
-    {
-    //request path http://localhost:8000/assets/5xbd456xx 
+deleteItem(itemId: string) {
+    this.http.delete("http://localhost:8080/devices" + itemId)
+        .subscribe(() => {
+            console.log('Deleted: ' + itemId);
+            });
+            location.reload();
+        }
+
+updateItem(itemId: string, itemName: string, itemModel: string, itemDes: string,
+    itemSerial: string, itemCost: string, itemQty: string) {
+    //request path http://localhost:8000/devices/5xbd456xx 
     //asset information will be send as HTTP body parameters 
         this.http.put("http://localhost:8080/devices" + 
-       capstoneId, { itemName, itemModel, itemDes, itemSerial, itemCost, itemQty })
+       itemId, { itemName, itemModel, itemDes, itemSerial, itemCost, itemQty })
         .subscribe(() => {
-            console.log('Updated: ' + capstoneId);
+            console.log('Updated: ' + itemId);
         });
     }
 
     //Uses http.get() to request data based on student id 
-    getItem(capstoneId: string) {
-        return this.http.get('http://localhost:8080/devices'+ capstoneId);
+    getItem(itemId: string) {
+        return this.http.get('http://localhost:8080/devices'+ itemId);
     }
 
-    deleteItem(capstoneId: string) {
-        this.http.delete("http://localhost:8080/devices" + capstoneId)
-            .subscribe(() => {
-                console.log('Deleted: ' + capstoneId);
-            });
-        location.reload();
-    }
-  }
+    
+        
+};
+  
