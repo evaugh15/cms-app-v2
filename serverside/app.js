@@ -24,9 +24,9 @@ db.once("open", function () {
     console.log("Connected Successfully");
 });
  
-/*app.get("/", function(req, res) {
-    res.render("home");
-});*/
+app.get("/", function(req, res) {
+    res.send("Good morning.")
+});
 
 
 //specify which domains can make requests and which methods are allowed
