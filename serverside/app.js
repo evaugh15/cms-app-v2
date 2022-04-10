@@ -24,8 +24,17 @@ db.once("open", function () {
     console.log("Connected Successfully");
 });
  
-var distDir = __dirname + "/dist/";
- app.use(express.static(distDir));
+app.get('/', (req, res, next) => {
+
+    res.status(200).json({
+        status: 'success',
+        data: {
+            name: 'name of your app',
+            version: '0.1.0'
+        }
+    });
+
+});
 
 
 //specify which domains can make requests and which methods are allowed
