@@ -23,19 +23,10 @@ db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
     console.log("Connected Successfully");
 });
- 
-app.get('/', (req, res, next) => {
 
-    res.status(200).json({
-        status: 'success',
-        data: {
-            name: 'name of your app',
-            version: '0.1.0'
-        }
-    });
-
-});
-
+app.get('/', function(req, res){
+    res.sendFile(path.join(__dirname, '/home.html'));
+})
 
 //specify which domains can make requests and which methods are allowed
 app.use((req, res, next) => {
