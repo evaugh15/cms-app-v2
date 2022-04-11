@@ -24,9 +24,10 @@ db.once("open", function () {
     console.log("Connected Successfully");
 });
 
-app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, 'index.html'));
-})
+app.use(express.static('./cms/dist/cms'));
+app.get('/*', function(req, res){
+    res.sendFile('index.html', {root: 'cms/dist/cms/'})
+});
 
 //specify which domains can make requests and which methods are allowed
 app.use((req, res, next) => {
