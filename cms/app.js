@@ -25,7 +25,7 @@ db.once("open", function () {
 });
 
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, '/src/app/home/home.component.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 })
 
 //specify which domains can make requests and which methods are allowed
