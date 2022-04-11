@@ -12,7 +12,7 @@
   "main": "webserver.js",
   "devDependencies": {},
   "scripts": {
-
+    "build" : "ng build --prod"
   },
   "repository": {
     "type": "git",
