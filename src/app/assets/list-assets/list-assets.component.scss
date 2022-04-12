@@ -1,9 +1,9 @@
-div {
-    margin-left: 10%;
+.button-margin {
+  margin-left: 10%;
 }
 
-button {
-    margin-left: 10%; 
+div {
+    margin-left: 10%;
 }
 
 table {
@@ -11,24 +11,22 @@ table {
     border-collapse: collapse;
     width: 75%;
     height: 90%;
-    margin-left: 10%;
     margin-bottom: 25%;
     overflow: auto;
   }
 
-  th{
-    color: white;
-    background-color: #673ab7;
-  }
-
+th{
+  color: white;
+  background-color: #673ab7;
+}
+  
   td, th {
-    border: 2px solid #5e5e5e;
+    border: 1px solid #5e5e5e;
     text-align: center;
-    padding: 8px;
     max-width:100%;
     white-space:nowrap;
   }
-
+  
   tr:nth-child(odd) {
     background-color:lighten($color: #673ab7, $amount: 40);
   }
@@ -38,7 +36,6 @@ table {
     margin:5px;
   }
 
-  #b2{
-    padding: 1px;
-    margin:5px
+  .table-padding {
+    padding-top: 10px;
   }
