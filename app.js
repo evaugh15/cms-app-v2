@@ -1,7 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express();
-//const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const Item = require('./serverside/models/assets');
@@ -41,13 +40,6 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 //parse application/json
 app.use(bodyParser.json());
-//app.use(cors())
-
-//app.use(express.static( __dirname + './cms/dist')); 
-
-/*app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+'./cms/dist/index.html'))
-});*/
 
 //in the app.get() method below we add a path for the assets API 
 //by adding /devices, we tell the server that this method will be called every time http://localhost:8000/devices is requested. 
@@ -156,7 +148,7 @@ app.get('/users', (req, res, next) => {
     });
     
     //find a student based on the id
-    app.get('/users/:_id', (req, res, next) => {
+    app.get('/users/:id', (req, res, next) => {
         //call mongoose method findOne (MongoDB db.Students.findOne())
         People.findOne({_id: req.params.id}) 
             //if data is returned, send data as a response 
