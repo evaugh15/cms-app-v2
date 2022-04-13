@@ -6,7 +6,7 @@ require('dotenv').config();
 const Item = require('./serverside/models/assets');
 const People = require('./serverside/models/users');
 const configFile = require('./serverside/config.json');
-const PORT = process.env.PORT || 27017;
+const PORT = process.env.PORT || 8080;
 
 
 // reference the db credentials from an external file. Never hard code credentials within source code.
