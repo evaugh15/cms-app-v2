@@ -13,20 +13,21 @@ const PORT = process.env.PORT || 8080;
 // also requiring the app to be recompiled/redeployed/etc
 // see also: CWE 798 "Use of Hard-coded Credentials" https://cwe.mitre.org/data/definitions/798.html
 //mongodb+srv://evaugh15:abc1234@cluster0.ajypq.mongodb.net/devices?retryWrites=true&w=majority
-/*
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://'localhost/devices',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }
 );
-*/
+
+/*
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://' + configFile.dbuser + ':' + configFile.dbpass + '@cluster0-shard-00-00.ajypq.mongodb.net:27017,cluster0-shard-00-01.ajypq.mongodb.net:27017,cluster0-shard-00-02.ajypq.mongodb.net:27017/devices?ssl=true&replicaSet=atlas-ohwgae-shard-0&authSource=admin&retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }
-);
+);*/
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
