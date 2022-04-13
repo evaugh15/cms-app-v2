@@ -144,7 +144,7 @@ app.post('/devices', (req, res, next) => {
         });
     });
     
-app.get('/users', (req, res, next) => {
+app.get('/list-users', (req, res, next) => {
         //we will add an array named students to pretend that we received this data from the database
         People.find() 
         //if data is returned, send data as a response 
