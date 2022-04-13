@@ -7,9 +7,3 @@ app.listen(port, () => {
     console.log("Server is running on port " +port);
 });
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://'localhost/devices',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }
-);
