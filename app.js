@@ -6,7 +6,7 @@ require('dotenv').config();
 const Item = require('./serverside/models/assets');
 const People = require('./serverside/models/users');
 const configFile = require('./serverside/config.json');
-const PORT = process.env.PORT || 8080;
+
 
 // reference the db credentials from an external file. Never hard code credentials within source code.
 // unencrypted properties file isn't too much better, but can be controlled and allows for credentials to be updated by admins without
@@ -14,20 +14,12 @@ const PORT = process.env.PORT || 8080;
 // see also: CWE 798 "Use of Hard-coded Credentials" https://cwe.mitre.org/data/definitions/798.html
 //mongodb+srv://evaugh15:abc1234@cluster0.ajypq.mongodb.net/devices?retryWrites=true&w=majority
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://'localhost/devices',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }
-);
-
-/*
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://' + configFile.dbuser + ':' + configFile.dbpass + '@cluster0-shard-00-00.ajypq.mongodb.net:27017,cluster0-shard-00-01.ajypq.mongodb.net:27017,cluster0-shard-00-02.ajypq.mongodb.net:27017/devices?ssl=true&replicaSet=atlas-ohwgae-shard-0&authSource=admin&retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }
-);*/
+);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
