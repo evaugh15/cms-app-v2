@@ -14,7 +14,7 @@ export class UsersService {
 
      // Uses http.get() to load data 
      getUsers() {
-      return this.http.get('users');
+      return this.http.get('/users');
   }
 
      //Uses http.post() to post data 
