@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser');
-const app = express.Router();
+const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 const Item = require('./serverside/models/assets');
