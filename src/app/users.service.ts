@@ -20,7 +20,7 @@ export class UsersService {
      //Uses http.post() to post data 
 addUser(Name: string, userDept: string, userEmail: string, userName: string, userPhone: string, userTitle: string) 
 {
-this.http.post('http://localhost:8080/users',{ Name, userDept, userEmail, userName, userPhone, userTitle })
+this.http.post('/users',{ Name, userDept, userEmail, userName, userPhone, userTitle })
     .subscribe((responseData) => {
         console.log(responseData);
     }); 
@@ -30,7 +30,7 @@ updateUser(peopleId: string, Name: string, userDept: string, userEmail: string, 
 {
     //request path http://localhost:8000/assets/5xbd456xx 
     //user information will be send as HTTP body parameters 
-   this.http.put("http://localhost:8080/users" + 
+   this.http.put("/users" + 
    peopleId, { Name, userDept, userEmail, userName, userPhone, userTitle})
     .subscribe(() => {
         console.log('Updated: ' +  peopleId);
@@ -39,11 +39,11 @@ updateUser(peopleId: string, Name: string, userDept: string, userEmail: string, 
 
  //Uses http.get() to request data based on user id 
  getUser(peopleId: string) {
-  return this.http.get('http://localhost:8080/users'+ peopleId);
+  return this.http.get('/users'+ peopleId);
 }
 
 deleteUser(peopleId: string) {
-  this.http.delete("http://localhost:8080/users" + peopleId)
+  this.http.delete("/users" + peopleId)
       .subscribe(() => {
           console.log('Deleted: ' + peopleId);
       });
