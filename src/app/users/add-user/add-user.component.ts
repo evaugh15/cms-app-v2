@@ -13,7 +13,7 @@ export class AddUserComponent implements OnInit {
 
   @Input() Name: string = "";
   @Input() userDept: string = "";
-  @Input() userEmail: string = "";
+  @Input() userEmail: string =""
   @Input() userName: string = "";
   @Input() userPhone: string = "";
   @Input() userTitle: string = "";
@@ -25,7 +25,7 @@ export class AddUserComponent implements OnInit {
   userForm = this.fb.group({
     Name: ['', Validators.required],
     userDept: [''],
-    userEmail: ['', Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")],
+    userEmail: ['', Validators.required, Validators.email],
     userName: [''],
     userPhone: [''],
     userTitle: ['', Validators.required]
@@ -84,5 +84,13 @@ export class AddUserComponent implements OnInit {
     alert("User information saved!") 
     this.router.navigate(['/list-users']);
   } 
+
+  /*getErrorMessage() {
+    if (this.userEmail.hasError('required')) {
+      return 'You must enter a value';
+    } 
+    return this.userEmail.hasError('email') ? 'Not a valid email' : '';
+  }*/
+
 }
 
