@@ -1,13 +1,13 @@
-<h3>Add Users Here!</h3>
+<h3>{{mode}} Users Here!</h3>
 <hr>
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" #myForm="ngForm">
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Name" id="Name" [(ngModel)]="Name" name="Name" required>
+        <input matInput placeholder="Name" formControlName="Name" [(ngModel)]="Name" name="Name" type="text" required>
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
         <mat-label>Department</mat-label>
-        <mat-select matInput placeholder="Department" id="userDept" [(ngModel)]="userDept" name="userDept">
+        <mat-select matInput placeholder="Department" formControlName="userDept" [(ngModel)]="userDept" name="userDept">
             <mat-option value="Information Security">Information Security</mat-option>
             <mat-option value="Service Desk">Service Desk</mat-option>
             <mat-option value="Network">Network Ops</mat-option>
@@ -16,23 +16,23 @@
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Email" id="userEmail" [(ngModel)]="userEmail" name="userEmail" required>
+        <input matInput placeholder="Email" formControlName="userEmail" [(ngModel)]="userEmail" name="userEmail" type="email" required>
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Username" id="userName" [(ngModel)]="userName" name="userName">
+        <input matInput placeholder="Username" formControlName="userName" [(ngModel)]="userName" name="userName" type="text">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Phone" id="userPhone" [(ngModel)]="userPhone" name="userPhone">
+        <input matInput placeholder="Phone" formControlName="userPhone" [(ngModel)]="userPhone" name="userPhone" type="tel">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="User Title" id="userTitle" [(ngModel)]="userTitle" name="userTitle" required>
+        <input matInput placeholder="User Title" formControlName="userTitle" [(ngModel)]="userTitle" name="userTitle" type="text" required>
     </mat-form-field> <br>
 
     <p>
-        <button type="submit" mat-raised-button color="primary">Submit</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!userForm.valid">Submit</button>
         <button type="reset" mat-raised-button color="accent">Reset</button>
     </p>
 </form>

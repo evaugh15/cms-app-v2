@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsersService } from '../../users.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Router } from '@angular/router';
@@ -10,18 +11,29 @@ import { Router } from '@angular/router';
 })
 export class AddUserComponent implements OnInit {
 
-  @Input() Name!: string;
-  @Input() userTitle!: string;
-  @Input() userEmail!: string;
-  @Input() userPhone!: string;
-  @Input() userName!: string;
-  @Input() userDept!: string;
+  @Input() Name: string = "";
+  @Input() userDept: string = "";
+  @Input() userEmail: string = "";
+  @Input() userName: string = "";
+  @Input() userPhone: string = "";
+  @Input() userTitle: string = "";
 
   public mode = 'Add'; //default mode
   private id: any; //asset ID
   private user: any;
 
-  constructor(private _myService: UsersService, 
+  userForm = this.fb.group({
+    Name: ['', Validators.required],
+    userDept: [''],
+    userEmail: ['', Validators.required],
+    userName: [''],
+    userPhone: [''],
+    userTitle: ['', Validators.required]
+  })
+
+  constructor(
+    private fb: FormBuilder,
+    private _myService: UsersService, 
     private router: Router, 
     public route: ActivatedRoute) { }
 
@@ -69,6 +81,7 @@ export class AddUserComponent implements OnInit {
     if (this.mode == 'Edit')
       this._myService.updateUser(this.id, this.Name ,this.userDept, this.userEmail, this.userName, this.userPhone,
         this.userTitle);
+    alert("User information saved!") 
     this.router.navigate(['/list-users']);
   } 
 }
