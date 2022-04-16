@@ -18,7 +18,7 @@
     <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
         <input matInput placeholder="pat@example.com" formControlName="userEmail" [(ngModel)]="userEmail" name="userEmail" type="email" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
         <!--<div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)"></div>-->
         <!--<div [hidden]="!emailref.errors?.pattern">Invalid Pattern</div>-->
     </mat-form-field> <br>
