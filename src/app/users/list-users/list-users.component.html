@@ -4,11 +4,11 @@
     <h3>This page displays a list of all users that have been added in the database.</h3>
 </div>
 <br>
-<button mat-raised-button color="warn" routerLink="/create-user" class="button-margin">+ Add User</button><br>
+<button mat-raised-button color="warn" routerLink="/create-user" class="button-margin">+ Add User</button>
+<br>
 
 <div class="table-padding">
     <table>
-    <!--routerLink="/detail/{{user.id}}"  <table *ngFor="let user of user let i = index"> --binds with == products.component.ts ( products = PRODUCTS)-->
       <table>
           <span class="list-users">{{user.id}} {{user.Name}}</span>
         <tr>
