@@ -9,7 +9,7 @@ import { UsersService } from '../../users.service';
 export class ListUsersComponent implements OnInit {
 
  //declare variable to hold response and make it public to be accessible from components.html 
-  public user: any;
+  public users: any;
 
   constructor(private _myService: UsersService) { }
 
@@ -19,10 +19,10 @@ export class ListUsersComponent implements OnInit {
 
   //method called OnInit
   getUsers() {
-    console.log(this.user)
+    console.log(this.users)
     this._myService.getUsers().subscribe(
        //read data and assign to public variable assets
-      data => { this.user = data},
+      data => { this.users = data},
        
         err => console.error(err),
         () => console.log('finished loading')
