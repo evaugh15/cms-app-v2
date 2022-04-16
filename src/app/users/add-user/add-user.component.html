@@ -1,9 +1,8 @@
 <h3>{{mode}} Users Here!</h3>
 <hr>
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()" #myForm="ngForm">
-    <mat-label>Name</mat-label>
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Ex: John Smith" formControlName="Name" [(ngModel)]="Name" name="Name" type="text" required>
+        <input matInput placeholder="Name" formControlName="Name" [(ngModel)]="Name" name="Name" type="text" required>
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
@@ -32,9 +31,8 @@
         <input matInput placeholder="Phone" formControlName="userPhone" [(ngModel)]="userPhone" name="userPhone" type="tel">
     </mat-form-field> <br>
 
-    <mat-label>User Title</mat-label>
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Ex: Manager" formControlName="userTitle" [(ngModel)]="userTitle" name="userTitle" type="text" required>
+        <input matInput placeholder="User Title" formControlName="userTitle" [(ngModel)]="userTitle" name="userTitle" type="text" required>
     </mat-form-field> <br>
 
     <p>
