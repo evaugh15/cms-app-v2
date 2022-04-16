@@ -10,7 +10,7 @@
 <div class="table-padding">
     <table>
       <table>
-          <span class="list-users">{{user.id}} {{user.Name}}</span>
+         <!-- <span class="list-users">{{user.id}} {{user.Name}}</span> -->
         <tr>
           <th>Internal ID</th>
           <th>Name</th>
@@ -22,7 +22,7 @@
           <th>Action</th>
         </tr>
   
-        <tr *ngFor="let user of user let i = index">
+        <tr *ngFor="let user of users let i = index">
           <td>{{user._id}}</td> 
           <td>{{user.Name}}</td>
           <td>{{user.userDept}}</td>
