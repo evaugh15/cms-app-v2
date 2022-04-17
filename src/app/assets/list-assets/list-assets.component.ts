@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class ListAssetsComponent implements OnInit {
 
 //declare variable to hold response and make it public to be accessible from components.html 
-  public item: any;
+  public items: any;
   
   //initialize the call using AssetService 
   constructor(private _myService: AssetsService) { }
@@ -22,9 +22,9 @@ export class ListAssetsComponent implements OnInit {
   }
   //method called OnInit
   getItems() {
-      console.log(this.item)
+      console.log(this.items)
       this._myService.getItems().subscribe(
-        data => { this.item = data},
+        data => { this.items = data},
           //read data and assign to public variable assets
           err => console.error(err),
           () => console.log('finished loading')
