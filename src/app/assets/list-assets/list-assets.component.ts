@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AssetsService } from '../../assets.service';
-import { AddAssetComponent } from '../add-asset/add-asset.component';
-import { MatButton } from '@angular/material/button';
-import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
