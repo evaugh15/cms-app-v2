@@ -27,9 +27,6 @@ th{
     white-space:nowrap;
   }
   
-  tr:nth-child(odd) {
-    background-color:lighten($color: #673ab7, $amount: 40);
-  }
 
   .b1{
     padding: 1px;

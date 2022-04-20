@@ -8,7 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-list-assets',
   templateUrl: './list-assets.component.html',
-  styleUrls: ['./list-assets.component.scss']
+  styleUrls: ['./list-assets.component.css']
 })
 export class ListAssetsComponent implements OnInit {
 
