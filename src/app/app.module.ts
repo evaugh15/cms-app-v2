@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 //import { RouterModule } from '@angular/router';
 
 // home, 404, other future misc components
@@ -23,6 +23,9 @@ import { DialogComponent } from './dialog/dialog.component';
 // services
 import { AssetsService } from './assets.service';
 import { UsersService } from './users.service';
+import { AuthenticationService } from './authentication.service';
+import { SimplerequestService } from './simplerequest.service';
+// import { TokenInterceptionService } from './token-interception.service';
 
 // misc formatting and style
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,6 +43,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
 import { LayoutModule } from './layout/layout.module';
 import { MatSelectModule } from '@angular/material/select';
+import { AuthenticationGuard } from './authentication.guard';
+import { TokenInterceptionService } from './token-interception.service';
+
 
 
 @NgModule({
@@ -80,7 +86,8 @@ import { MatSelectModule } from '@angular/material/select';
     LayoutModule,
 
   ],
-  providers: [AssetsService, UsersService],
+  providers: [AssetsService, UsersService, AuthenticationService, SimplerequestService, AuthenticationGuard, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptionService, multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,15 +6,15 @@
 
 .mat-form-field {
   width: 100%;
-  min-width: 300px;
+  min-width: 200px;
+  
 }
 
 mat-card-title,
 mat-card-content {
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 }
-
 .error {
   padding: 16px;
   width: 300px;
@@ -23,6 +23,6 @@ mat-card-content {
 }
 
 .button {
-  display: flex;
+  text-align: center;
   justify-content: center;
 }

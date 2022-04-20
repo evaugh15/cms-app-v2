@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -7,6 +8,7 @@ const Item = require('./serverside/models/assets');
 const People = require('./serverside/models/users');
 const configFile = require('./serverside/config.json');
 const PORT = process.env.PORT || 8080;
+const router = express.Router();
 
 
 // reference the db credentials from an external file. Never hard code credentials within source code.
@@ -16,20 +18,37 @@ const PORT = process.env.PORT || 8080;
 //mongodb+srv://evaugh15:abc1234@cluster0.ajypq.mongodb.net/devices?retryWrites=true&w=majority
 //@cluster0-shard-00-00.ajypq.mongodb.net:27017,cluster0-shard-00-01.ajypq.mongodb.net:27017,cluster0-shard-00-02.ajypq.mongodb.net:27017/devices?ssl=true&replicaSet=atlas-ohwgae-shard-0&authSource=admin&retryWrites=true&w=majority
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://' + configFile.dbuser + ':' + configFile.dbpass + '@cluster0.ajypq.mongodb.net/devices?retryWrites=true&w=majority',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }
-);
+const db = 'mongodb+srv://evaugh15:abc1234@cluster0.ajypq.mongodb.net/'+'devices?retryWrites=true&w=majority';
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
-db.once("open", function () {
-    console.log("Connected Successfully");
+mongoose.connect(db, err =>{
+    if(err){
+        console.err('Error!' + err)
+    } else {
+        console.log('Connected to mongodb')
+    }
 });
 
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://' + configFile.dbuser + ':' + configFile.dbpass + '@cluster0.ajypq.mongodb.net/devices?retryWrites=true&w=majority',
+//     {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true
+//     }
+// );
+
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "connection error: "));
+// db.once("open", function () {
+//     console.log("Connected Successfully");
+// });
+
 app.use(express.static('./dist/cms'));
+const api = require('./serverside/routes/api');
+const assets = require('./serverside/models/assets');
+app.use(cors());
+
+app.get('/', function(req,res){
+    res.send('Hello world!')
+})
 app.get('/*', function(req, res){
     res.sendFile('index.html', {root: 'dist/cms/'})
 });
@@ -47,8 +66,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //parse application/json
 app.use(bodyParser.json());
 
+app.use('/api', api);
+
 //in the app.get() method below we add a path for the assets API 
 //by adding /devices, we tell the server that this method will be called every time http://localhost:8000/devices is requested. 
+
+
 app.get('/devices', (req, res, next) => {
     //we will add an array named appointment to pretend that we received this data from the database
     //call mongoose method find (MongoDB db.Assets.find())
@@ -115,6 +138,7 @@ app.put('/devices/:id', (req, res, next) => {
 });
 
 //serve incoming post requests to /assets
+
 app.post('/devices', (req, res, next) => {
     // create a new student variable and save request’s fields 
     const item = new Item({
@@ -205,26 +229,6 @@ app.get('/users', (req, res, next) => {
     });
     
     //serve incoming post requests to /students
-    app.post('/users', (req, res, next) => {
-        
-        // create a new doctor variable and save requestâs fields 
-    const people = new People({
-        Name: req.body.Name, 
-        userDept: req.body.userDept,
-        userEmail: req.body.userEmail,
-        userName: req.body.userName,
-        userPhone: req.body.userPhone,
-        userTitle: req.body.userTitle
-});
-    
-    //send the document to the database 
-    people.save()
-        //in case of success
-        .then(() => { console.log('Success');})
-        //if error
-        .catch(err => {console.log('Error:' + err);});
-                        
-    });
         //:id is a dynamic parameter that will be extracted from the URL
     app.delete("/users/:id", (req, res, next) => {
         People.deleteOne({ _id: req.params.id }).then(result => {

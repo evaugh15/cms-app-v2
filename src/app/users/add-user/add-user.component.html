@@ -1,13 +1,13 @@
 <h3>{{mode}} Users Here!</h3>
 <hr>
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()" #myForm="ngForm">
+<form [formGroup]="userForm"  #myForm="ngForm"> <!--(ngSubmit)="onSubmit()"-->
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Name" formControlName="Name" [(ngModel)]="Name" name="Name" type="text" required>
+        <input matInput placeholder="Name" formControlName="name"  name="Name" type="text" required>
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
         <mat-label>Department</mat-label>
-        <mat-select matInput placeholder="Department" formControlName="userDept" [(ngModel)]="userDept" name="userDept">
+        <mat-select matInput placeholder="Department" formControlName="userDept"  name="userDept">
             <mat-option value="Information Security">Information Security</mat-option>
             <mat-option value="Service Desk">Service Desk</mat-option>
             <mat-option value="Network">Network Ops</mat-option>
@@ -17,26 +17,26 @@
 
     <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="pat@example.com" formControlName="userEmail" [(ngModel)]="userEmail" name="userEmail" type="email" required>
+        <input matInput placeholder="pat@example.com" formControlName="userEmail"  name="userEmail" type="email" required>
         <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
         <!--<div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)"></div>-->
         <!--<div [hidden]="!emailref.errors?.pattern">Invalid Pattern</div>-->
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Username" formControlName="userName" [(ngModel)]="userName" name="userName" type="text">
+        <input matInput placeholder="Username" formControlName="userName"  name="userName" type="text">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Phone" formControlName="userPhone" [(ngModel)]="userPhone" name="userPhone" type="tel">
+        <input matInput placeholder="Phone" formControlName="userPhone"  name="userPhone" type="tel">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="User Title" formControlName="userTitle" [(ngModel)]="userTitle" name="userTitle" type="text" required>
+        <input matInput placeholder="User Title" formControlName="userTitle"  name="userTitle" type="text" required>
     </mat-form-field> <br>
 
     <p>
-        <button type="submit" mat-raised-button color="primary" [disabled]="!userForm.valid">Submit</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!userForm.valid" (click)="submitForm()">Submit</button>
         <button type="reset" mat-raised-button color="accent">Reset</button>
     </p>
 </form>

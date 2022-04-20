@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import { AuthenticationService } from './authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { DialogComponent } from './dialog/dialog.component';
 export class AppComponent {
   title = 'CMS APPLICATION';
 
-  constructor(private matDialog: MatDialog) {
+  constructor(private matDialog: MatDialog, public _authenticationService: AuthenticationService) {
 
   }
 

@@ -10,7 +10,14 @@ const httpOptions = {
 @Injectable()
 export class UsersService {
 
+    private _userUrl = "http://localhost:3000/api/users"
+    
     constructor(private http:HttpClient) {}
+
+    
+    addedUser(asset) {
+        return this.http.post<any>(this._userUrl, asset)
+    }
 
      // Uses http.get() to load data 
      getUsers() {
@@ -18,13 +25,13 @@ export class UsersService {
   }
 
      //Uses http.post() to post data 
-addUser(Name: string, userDept: string, userEmail: string, userName: string, userPhone: string, userTitle: string) 
-{
-this.http.post('users',{ Name, userDept, userEmail, userName, userPhone, userTitle })
-    .subscribe((responseData) => {
-        console.log(responseData);
-    }); 
-}
+// addUser(Name: string, userDept: string, userEmail: string, userName: string, userPhone: string, userTitle: string) 
+// {
+// this.http.post('users',{ Name, userDept, userEmail, userName, userPhone, userTitle })
+//     .subscribe((responseData) => {
+//         console.log(responseData);
+//     }); 
+// }
 
 updateUser(peopleId: string, Name: string, userDept: string, userEmail: string, userName: string, userPhone: string, userTitle: string) 
 {

@@ -14,6 +14,7 @@ import { DeleteUserComponent } from './users/delete-user/delete-user.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { ViewUserComponent } from './users/view-user/view-user.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,16 +23,16 @@ const routes: Routes = [
   { path: 'signup', component: SignupFormComponent}, //signup path
 
 // paths for User Module
-  { path: 'create-user', component: AddUserComponent },
+  { path: 'users', component: AddUserComponent },
  //{ path: 'view-user/:id', component: ViewUserComponent },
-  { path: 'list-users', component: ListUsersComponent },
+  { path: 'list-users', component: ListUsersComponent, canActivate:[AuthenticationGuard] },
  //{ path: 'delete-user/:id', component: DeleteUserComponent },
   { path: 'edit-user/:_id', component: AddUserComponent },
 
 // paths for Asset Module
   { path: 'assets', component: AddAssetComponent },
   //{ path: 'viewAsset/:id', component: ViewAssetComponent },
-  { path: 'listassets', component: ListAssetsComponent },
+  { path: 'listassets', component: ListAssetsComponent, canActivate:[AuthenticationGuard] },
   //{ path: 'deleteasset/:id', component: DeleteAssetComponent },
   { path: 'editAssets/:_id', component: AddAssetComponent },
 

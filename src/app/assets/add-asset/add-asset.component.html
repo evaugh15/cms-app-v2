@@ -1,32 +1,32 @@
 <h3>{{mode}} Assets Here!</h3>
 <hr>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" #myForm="ngForm">
+<form [formGroup]="assetForm"  #myForm="ngForm"> <!--(ngSubmit)="onSubmit()"-->
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Name" formControlName="itemName" [(ngModel)]="itemName" name="itemName" type="text" required>
+        <input matInput placeholder="Name" formControlName="itemName"  name="itemName" type="text" required> <!--[(ngModel)]="itemName"-->
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Model" formControlName="itemModel" [(ngModel)]="itemModel" name="itemModel" type="text" required>
+        <input matInput placeholder="Model" formControlName="itemModel"  name="itemModel" type="text" required>
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Description" formControlName="itemDes" [(ngModel)]="itemDes" name="itemDes" type="text">
+        <input matInput placeholder="Description" formControlName="itemDes"  name="itemDes" type="text">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Serial #" formControlName="itemSerial" [(ngModel)]="itemSerial" name="itemSerial" type="text">
+        <input matInput placeholder="Serial #" formControlName="itemSerial"  name="itemSerial" type="text">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Cost (USD)" formControlName="itemCost" [(ngModel)]="itemCost" name="itemCost" type="number">
+        <input matInput placeholder="Cost (USD)" formControlName="itemCost"  name="itemCost" type="number">
     </mat-form-field> <br>
 
     <mat-form-field appearance="fill">
-        <input matInput placeholder="Quantity" formControlName="itemQty" [(ngModel)]="itemQty" name="itemQty" type="number">
+        <input matInput placeholder="Quantity" formControlName="itemQty"  name="itemQty" type="number">
     </mat-form-field> <br>
 
     <p>
-        <button type="submit" mat-raised-button color="primary" [disabled]="!profileForm.valid">Submit</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!assetForm.valid" (click)="submitForm()">Submit</button>
         <button type="reset" mat-raised-button color="accent">Reset</button>
     </p>
 </form>

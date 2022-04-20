@@ -4,7 +4,7 @@
         <button mat-raised-button routerLink="/home" style="font-size: x-large;">Content Manager 2.0</button>
       </span>
       <span class="example-spacer"></span>
-      <button mat-icon-button routerLink="/login" matTooltip="CLICK HERE TO LOGIN!" class="person-icon" aria-label="icon-button with person icon">
+      <button  *ngIf="!_authenticationService.loggedIn()" mat-icon-button routerLink="/login" matTooltip="CLICK HERE TO LOGIN!" class="person-icon" aria-label="icon-button with person icon">
         <mat-icon>person</mat-icon>
       </button>
       <button mat-icon-button matTooltip="Home" routerLink="/home" class="home-icon" aria-label="icon-button with home icon">
@@ -18,6 +18,9 @@
       </button>
       <button mat-icon-button (click)="onOpenDialog()" matTooltip="Help" class="help_outline-icon" aria-label="icon-button with help_outline icon">
         <mat-icon>help_outline</mat-icon>
+      </button>
+      <button  *ngIf="_authenticationService.loggedIn()" mat-icon-button  matTooltip="Logout" class="exit_to_app-icon" aria-label="icon-button with exit_to_app icon" (click)="_authenticationService.logoutEmployee()" >
+        <mat-icon>exit_to_app</mat-icon>
       </button>
     </mat-toolbar-row>
 

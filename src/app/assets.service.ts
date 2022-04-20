@@ -10,7 +10,13 @@ const httpOptions = {
 @Injectable()
 export class AssetsService {
 
+    private _assetUrl = "http://localhost:3000/api/assets"
+
     constructor(private http:HttpClient) {}
+
+    addedAsset(asset) {
+        return this.http.post<any>(this._assetUrl, asset)
+    }
 
     // Uses http.get() to load data 
     getItems() {
@@ -18,13 +24,13 @@ export class AssetsService {
     }
 
     //Uses http.post() to post data 
-addItem(itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
-    {
-    this.http.post('devices',{ itemName, itemModel, itemDes, itemSerial, itemCost, itemQty })
-        .subscribe((responseData) => {
-            console.log(responseData);
-        }); 
-    }
+// addItem(itemName: string, itemModel: string, itemDes: string, itemSerial: string, itemCost: string, itemQty: string) 
+//     {
+//     this.http.post('devices',{ itemName, itemModel, itemDes, itemSerial, itemCost, itemQty })
+//         .subscribe((responseData) => {
+//             console.log(responseData);
+//         }); 
+//     }
 
 deleteItem(itemId: string) {
     this.http.delete("devices" + itemId)
