@@ -1,6 +1,13 @@
-# Cms
+# CMS Application Information & Installation Processes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+Welcome to the CMS Application. The CMS Application is designed to help you better manage your IT organization. The application constructed in conjunction with Kennesaw State University and by: Ethan Vaughn, Devon Smith, Dim Cabore, Helen McDaniel, and Muftau Salami.
+
+## Getting Started
+
+- We have included a file that explains the separate installations and how to get the project up and running. **Please click here to view.**
+- Install most current version of [NodeJS](https://nodejs.org/en/download/).
+- Run `npm i` in the project directory to install project dependencies. Important installations include: **mongoose, express, @angular/cli@latest.**
+- Any updates of code that are pushed to `main` will be auto-deployed to the Heroku application (https://cms-test-app-gtri.herokuapp.com/home).
 
 ## Development server
 
@@ -14,14 +21,3 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
