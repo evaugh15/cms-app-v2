@@ -4,7 +4,9 @@ Welcome to the CMS Application. The CMS Application is designed to help you bett
 
 ## Getting Started
 
-- We have included a file that explains the separate installations and how to get the project up and running. **Please click here to view.**
+- We have included a file that explains the separate installations and how to get the project up and running. **Please click below link to view.** [How to - Technical Document.docx](https://github.com/evaugh15/cms-app-v2/files/8532407/How.to.-.Technical.Document.docx)
+
+### Key Installations
 - Install most current version of [NodeJS](https://nodejs.org/en/download/).
 - Run `npm i` in the project directory to install project dependencies. Important installations include: **mongoose, express, @angular/cli@latest.**
 - Any updates of code that are pushed to `main` will be auto-deployed to the Heroku application (https://cms-test-app-gtri.herokuapp.com/home).
