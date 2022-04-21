@@ -8,18 +8,25 @@ Welcome to the CMS Application. The CMS Application is designed to help you bett
 
 ### Key Installations
 - Install most current version of [NodeJS](https://nodejs.org/en/download/).
-- Run `npm i` in the project directory to install project dependencies. Important installations include: **mongoose, express, @angular/cli@latest.**
+- Run `npm i` in the project directory to install project dependencies. Important installations include: **mongoose, express, @angular/cli@latest, nodemon.**
 - Any updates of code that are pushed to `main` will be auto-deployed to the Heroku application (https://cms-test-app-gtri.herokuapp.com/home).
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Adding Future Components to the Application
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+# Useful Links:
+- [Angular Resources](https://angular.io/docs)
+- [MongoDB Resources](https://www.mongodb.com/docs/)
+- [NodeJS Resources](https://nodejs.org/en/docs/)
+- [ExpressJS Resources](https://expressjs.com/en/guide/routing.html)
+- [Heroku Resources](https://devcenter.heroku.com/categories/reference)
 
